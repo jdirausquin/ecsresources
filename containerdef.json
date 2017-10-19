@@ -16,7 +16,7 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "logroup",
-          "awslogs-region": "us-east-1",
+          "awslogs-region": "us-west-2",
           "awslogs-stream-prefix": "logstream"
         },
     "environment": [
