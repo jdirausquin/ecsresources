@@ -22,3 +22,9 @@
 
         tags:
           - debug
+
+      - name: Terraform plan
+        command: terraform plan
+
+      - name: Terraform apply
+        command: terraform apply
