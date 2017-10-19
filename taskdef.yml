@@ -7,7 +7,7 @@
 
       - name: Changing parameters
         replace:
-          dest: ./containerdefinition.json
+          dest: ./containerdef.json
           regexp: "{{ item.param }}"
           replace: "{{ item.value }}"
         with_items:
