@@ -1,0 +1,24 @@
+# vim:ft=ansible
+---
+  - hosts: localhost
+    connection: local
+
+    tasks:
+
+      - name: Changing parameters
+        replace:
+          dest: ./containerdefinition.json
+          regexp: "{{ item.param }}"
+          replace: "{{ item.value }}"
+        with_items:
+          - { param: 'containername', value: '{{ containername }}' }
+          - { param: 'imageurltag', value: '{{ imageurl }}' }
+          - { param: 'ucpu', value: '{{ ucpu }}' }
+          - { param: 'umem', value: '{{ umem }}' }
+          - { param: 'hport', value: '{{ hport }}' }
+          - { param: 'cport', value: '{{ cport }}' }
+          - { param: 'logroup', value: '{{ lgroup }}' }
+          - { param: 'logstream', value: '{{ lstream }}' }
+
+        tags:
+          - debug

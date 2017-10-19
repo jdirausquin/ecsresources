@@ -1,0 +1,50 @@
+[ 
+  {
+    "name": "containername",
+    "image": "imageurltag",
+    "cpu": ucpu,
+    "memory": umem,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": hport,
+        "hostPort": cport,
+        "protocol": "tcp"
+      }
+    ],
+    "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "logroup",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "logstream"
+        },
+    "environment": [
+        {
+            "name": "VAR1",
+            "value": "KEY1"
+         },
+        {
+            "name": "VAR2",
+            "value": "KEY2"
+        },
+        {
+            "name": "VAR3",
+            "value": "KEY3"
+        },
+        {
+            "name": "VAR4",
+            "value": "KEY"
+        },
+        {
+            "name": "VAR5",
+            "value": "KEY5"
+        },
+        {
+            "name": "VAR6",
+            "value": "KEY6"
+        }
+        ]
+    }
+ }
+]
