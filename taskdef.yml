@@ -5,7 +5,7 @@
 
     tasks:
 
-      - name: Changing parameters
+      - name: Changing parameters on containerdef.son
         replace:
           dest: ./containerdef.json
           regexp: "{{ item.param }}"
@@ -20,6 +20,17 @@
           - { param: 'logroup', value: '{{ lgroup }}' }
           - { param: 'logstream', value: '{{ lstream }}' }
 
+        tags:
+          - debug
+
+      - name: Changing parameters on deploy.tf
+        replace:
+          dest: ./deploy.tf
+          regexp: "{{ item.param }}"
+          replace: "{{ item.value }}"
+        with_items:
+          - { param: 'taskdefname', value: '{{ taskdefname }}' }
+        
         tags:
           - debug
 
