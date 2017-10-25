@@ -25,7 +25,7 @@
 
       - name: Changing parameters on deploy.tf
         replace:
-          dest: ./deploy.tf
+          dest: ./elb-sg.tf
           regexp: "{{ item.param }}"
           replace: "{{ item.value }}"
         with_items:
@@ -33,9 +33,3 @@
         
         tags:
           - debug
-
-      - name: Terraform plan
-        command: terraform plan
-
-      - name: Terraform apply
-        command: terraform apply
